@@ -1,0 +1,53 @@
+<div>
+    <label class="Search lbl">Enter Login or User Name to Search</label>
+    <input (keyup)="applyFilter($event)" placeholder="&#61442;  Start searching for a hero by id or name or country">
+    <!-- <input type="search" placeholder="Enter the desired username" style="width: 100px;">
+    <button type="submit" (keyup)="applyFilter($event)"  >Search</button> -->
+</div>
+
+<div>
+    <h1 style="text-align: center;color: green;">Searched Users Data is listed below</h1>
+</div>
+
+<div class="container" style="padding: 13px;">
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table-success table-striped" border="2">
+                <thead class="table-primary" style="color: orangered;">
+                    <td class="table-primary">Login</td>
+                    <td class="table-primary">ID</td>
+                    <td class="table-primary">Node ID</td>
+                    <td class="table-primary">Avatar URL</td>
+                    <td class="table-primary">Gr Avatar ID</td>
+                </thead>
+                <tr class="table-primary" *ngFor='let k of sData'>
+                    <td>{{k.login}}</td>
+                    <td>{{k.id}}</td>
+                    <td>{{k.node_id}}</td>
+                    <td>{{k.avatar_url}}</td>
+                    <td>{{k.gravatar_id}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table-success table-striped" border="2">
+                <thead class="table-primary" style="color: orangered;">
+                    <td class="table-primary">Login</td>
+                    <td class="table-primary">ID</td>
+                    <td class="table-primary">Node ID</td>
+                    <td class="table-primary">Avatar URL</td>
+                    <td class="table-primary">Gr Avatar ID</td>
+                </thead>
+                <!-- {{this.sData|json}} -->
+                <tr class="table-primary" *ngFor='let k of srchToHist'>
+                    <td>{{k.login}}</td>
+                    <td>{{k.id}}</td>
+                    <td>{{k.node_id}}</td>
+                    <td>{{k.avatar_url}}</td>
+                    <td>{{k.gravatar_id}}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>
